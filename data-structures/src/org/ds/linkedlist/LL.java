@@ -1,6 +1,6 @@
 package org.ds.linkedlist;
 
-public class LLReverse {
+public class LL {
 
 	/*
 	 * 1. Insert at Begining 2. Insert at End 3. Search by Value 4. Search By Index
@@ -21,13 +21,37 @@ public class LLReverse {
 		return tmp;
 	}
 
-	void insertAtBegin(int data) {
+	public void insertAtBegin(int data) {
 		Node tmp = newNode(data);
 		if (head == null)
 			head = tmp;
 		else {
 			tmp.next = head;
 			head = tmp;
+		}
+	}
+
+	public void deleteAtBegin() {
+		if (head == null)
+			return;
+		else {
+			head = head.next;
+		}
+	}
+	public void deleteAtEnd() {
+		if (head == null)
+			return;
+		else {
+			if( head.next == null ) {
+				head = null;
+				return;
+			}
+
+			Node tmp = head;
+			while( tmp.next.next != null ) {
+				tmp = tmp.next;
+			}
+			tmp.next = null;
 		}
 	}
 
@@ -112,7 +136,7 @@ public class LLReverse {
 
 	}
 
-	void print() {
+	public void print() {
 		System.out.print("LL:");
 		if (head == null)
 			return;
@@ -139,7 +163,7 @@ public class LLReverse {
 
 	public static void main(String[] args) {
 		System.out.println("Hello World");
-		LLReverse m = new LLReverse();
+		LL m = new LL();
 		for (int i = 0; i < 5; i++)
 			m.insertAtBegin((int) (Math.random() * 100));
 		m.print();
