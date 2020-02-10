@@ -25,18 +25,20 @@ public class HeapSort {
 	
 	void swimDown() {
 		int i = 0;
-		int c1 = 2*i +1;
+		int c1 = 2 * i +1;
 		int c2 = c1 + 1;
-		while( ( c1 < top && arr[ i ] < arr[ c1 ] ) || ( c2 < top && arr[ i ] < arr[ c2 ] ) ) {
+		while( ( c1 < top && arr[ i ] < arr[ c1 ] ) || 
+			   ( c2 < top && arr[ i ] < arr[ c2 ] ) ) {
 			int c = (arr[ c1 ] > arr[ c2 ]) ? ( c1 ) : ( c2 );
 			int tmp = arr[ c ];
 			arr[ c ] = arr[ i ];
 			arr[ i ] = tmp;
 			i = c;
-			c1 = 2*i + 1;
+			c1 = 2 * i + 1;
 			c2 = c1 + 1;
 		}
 	}
+	
 	void heapSort() {
 		for( int i = 0; i < arr.length - 1; i++ ) {
 			arr[ top ] = arr[ 0 ];
@@ -46,6 +48,7 @@ public class HeapSort {
  			swimDown();
 		}
 	}
+	
 	void printHeap() {
 		System.out.println("Heap:");
 		for( int i = 0; i < arr.length; i++ )
