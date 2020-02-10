@@ -1,4 +1,4 @@
-package Trie;
+package org.ds.Trie;
 
 public class TrieOptimized {
 
