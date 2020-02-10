@@ -66,7 +66,7 @@ public class TrieUtil {
 			t.search( strings[ i ] );
 		}
 		t.search( "vicky" );
-		t.search("shiva");
+		t.search( "shiva" );
 		System.out.println( "Done" );
 	}
 }
